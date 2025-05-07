@@ -1,4 +1,9 @@
-name: PlayerMotinorUltra
+name: PlayerMotinor-Ultra
 version: '0.0.1'
-main: net.Mirik9724.playermotinor_ultra.PlayerMotinor-Ultra
+main: net.Mirik9724.playermonitor_ultra.PlayerMotinor-Ultra
 api-version: '1.18'
+commands:
+  playermonitor-ultra:
+    aliases: pmu
+    description: Search data by nickname, IP or UUID
+    usage: /pmu <subcommand> <nick or uuid or ip>

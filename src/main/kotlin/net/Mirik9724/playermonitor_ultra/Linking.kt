@@ -1,4 +1,4 @@
-package net.Mirik9724.playermotinor_ultra
+package net.Mirik9724.playermonitor_ultra
 
 import com.fasterxml.jackson.module.kotlin.*
 import com.fasterxml.jackson.databind.*
