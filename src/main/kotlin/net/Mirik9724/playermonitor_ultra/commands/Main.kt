@@ -1,5 +1,6 @@
 package net.Mirik9724.playermotinor_ultra.commands
 
+import net.Mirik9724.playermonitor_ultra.Linking
 import net.Mirik9724.playermonitor_ultra.commands.Commands
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
@@ -17,10 +18,10 @@ class LinkingCommand : CommandExecutor {
         val value = args[1]
 
         val result = when (sub) {
-            "uuid_from_name" -> Commands.getUuidFromName(value)
-            "ip_from_name" -> Commands.getIpFromName(value)
-            "name_from_uuid" -> Commands.getNameFromUuid(value)
-            "name_from_ip" -> Commands.getNameFromIp(value)
+            "uuid->name" -> Commands.getUuidFromName(value, Linking.players)
+            "ip->name" -> Commands.getIpFromName(value, Linking.players)
+            "name->uuid" -> Commands.getNameFromUuid(value, Linking.players)
+            "name->ip" -> Commands.getNameFromIp(value, Linking.players)
             else -> "§cНеизвестная подкоманда."
         }
 

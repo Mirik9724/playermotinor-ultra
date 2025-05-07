@@ -16,7 +16,7 @@ object Linking {
 
     private val dataFile = File("plugins/PlayerMonitor/players.json")
     private val mapper: ObjectMapper = jacksonObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
-    private var players: MutableMap<String, PlayerRecord> = mutableMapOf()
+    var players: MutableMap<String, PlayerRecord> = mutableMapOf()
 
     init {
         if (!dataFile.exists()) {
