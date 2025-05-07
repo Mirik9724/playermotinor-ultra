@@ -1,0 +1,4 @@
+name: PlayerMotinorUltra
+version: '0.0.1'
+main: net.Mirik9724.playermotinor_ultra.PlayerMotinor-Ultra
+api-version: '1.18'
