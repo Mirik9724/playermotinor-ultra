@@ -5,8 +5,9 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.plugin.java.JavaPlugin
+import net.Mirik9724.playermotinor_ultra.commands.LinkingCommand
 
-class `PlayerMonitor-Ultra` : JavaPlugin() {
+class PlayerMonitorUltra : JavaPlugin() {
 
     override fun onEnable() {
         Bukkit.getPluginManager().registerEvents(object : Listener {
@@ -15,6 +16,9 @@ class `PlayerMonitor-Ultra` : JavaPlugin() {
                 Linking.handleJoin(event.player)
             }
         }, this)
+
+        getCommand("playermonitor-ultra")?.setExecutor(LinkingCommand())
+
         logger.info("PlayerMonitor-Ultra - ON")
     }
 

@@ -9,8 +9,15 @@ import org.bukkit.entity.Player
 
 class LinkingCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
+        // Проверка прав
+        if (!sender.hasPermission("pmu.admin")) {
+            sender.sendMessage("§cYou don`t have permissions for this command.")
+            return true
+        }
+
+
         if (args.size < 2) {
-            sender.sendMessage("§cИспользование: /linking <subcommand> <value>")
+            sender.sendMessage("§cUsage /pmu <subcommand> <nick or uuid or ip>")
             return true
         }
 
@@ -18,14 +25,14 @@ class LinkingCommand : CommandExecutor {
         val value = args[1]
 
         val result = when (sub) {
-            "uuid->name" -> Commands.getUuidFromName(value, Linking.players)
-            "ip->name" -> Commands.getIpFromName(value, Linking.players)
-            "name->uuid" -> Commands.getNameFromUuid(value, Linking.players)
-            "name->ip" -> Commands.getNameFromIp(value, Linking.players)
-            else -> "§cНеизвестная подкоманда."
+            "name->uuid" -> Commands.getUuidFromName(value, Linking.players)
+            "name->ip" -> Commands.getIpFromName(value, Linking.players)
+            "uuid->name" -> Commands.getNameFromUuid(value, Linking.players)
+            "ip->name" -> Commands.getNameFromIp(value, Linking.players)
+            else -> "§cUnderknow subcommnad."
         }
 
-        sender.sendMessage("§aРезультат: §f$result")
+        sender.sendMessage("§aResult: §f$result")
         return true
     }
 }
