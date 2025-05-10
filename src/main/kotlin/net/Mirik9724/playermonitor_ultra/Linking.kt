@@ -42,7 +42,7 @@ object Linking {
         players[name] = record
         saveJson()
 
-        println("Игрок $name вошёл с UUID: $uuid и IP: $ip [${record.uuids[uuid]} раз]")
+//        println("Игрок $name вошёл с UUID: $uuid и IP: $ip [${record.uuids[uuid]} раз]")
     }
 
     private fun saveJson() {

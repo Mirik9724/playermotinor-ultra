@@ -1,5 +1,5 @@
 name: PlayerMotinor-Ultra
-version: '0.1.0'
+version: '0.1.1'
 main: net.Mirik9724.playermonitor_ultra.PlayerMonitorUltra
 api-version: '1.18'
 commands:
